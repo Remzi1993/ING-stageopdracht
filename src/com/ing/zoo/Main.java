@@ -7,87 +7,110 @@ import java.util.Scanner;
  * @author Remzi Cavdar - ict@remzi.info
  */
 public class Main {
-    public static void main(String[] args) {
-        // Creating all the animals with their names
-        String[] animalsNames = {"Elsa", "Henk", "Dora", "Wally", "Marty"};
-        Hippo elsa = new Hippo(animalsNames[0]);
-        Lion henk = new Lion(animalsNames[1]);
-        Pig dora = new Pig(animalsNames[2]);
-        Tiger wally = new Tiger(animalsNames[3]);
-        Zebra marty = new Zebra(animalsNames[4]);
+    // Creating all the animals with their names
+    private static final Animal[] ANIMALS = {new Hippo("Elsa"), new Lion("Henk"), new Pig("Dora"),
+            new Tiger("Wally"), new Zebra("Marty")};
 
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Voer uw command in: ");
-        String input = scanner.nextLine();
+        String input = scanner.nextLine().trim().toLowerCase();
 
-        // Assuming command followed by an optional animal name separated by a space
-        String[] parts = input.split(" ", 2);
-        // Convert command and animal to a lower case for consistent handling
-        String command = parts[0].toLowerCase();
-        String animalName = parts.length > 1 ? parts[1].toLowerCase() : "";
-
-        switch (command) {
+        switch (input) {
             case "hello":
-                if (animalName.isEmpty()) {
-                    // All animals say hello
-                    System.out.println(
-                            elsa.getName() + " says: " + elsa.getGreeting()
-                            + "\n" + henk.getName() + " says: " + henk.getGreeting()
-                            + "\n" + dora.getName() + " says: " + dora.getGreeting()
-                            + "\n" + wally.getName() + " says: " + wally.getGreeting()
-                            + "\n" + marty.getName() + " says: " + marty.getGreeting()
-                    );
-                }
-                else {
-                    // Specific animal says hello
-                    switch (animalName) {
-                        case "elsa":
-                            System.out.println(elsa.getName() + " says: " + elsa.getGreeting());
-                            break;
-                        case "henk":
-                            System.out.println(henk.getName() + " says: " + henk.getGreeting());
-                            break;
-                        case "dora":
-                            System.out.println(dora.getName() + " says: " + dora.getGreeting());
-                            break;
-                        case "wally":
-                            System.out.println(wally.getName() + " says: " + wally.getGreeting());
-                            break;
-                        case "marty":
-                            System.out.println(marty.getName() + " says: " + marty.getGreeting());
-                            break;
-                        default:
-                            System.out.println("Unknown animal name: " + animalName);
-                            break;
-                    }
-                }
+                printAllGreetings();
                 break;
             case "give leaves":
-                // All herbivores eat leaves
-                System.out.println(
-                        elsa.getName() + " eats leaves: " + elsa.eatLeaves()
-                        + "\n" + dora.getName() + " eats leaves: " + dora.eatLeaves()
-                        + "\n" + marty.getName() + " eats leaves: " + marty.eatLeaves()
-                );
+                printHerbivoresEatingLeaves();
                 break;
             case "give meat":
-                // All carnivores eat meat
-                System.out.println(
-                        henk.getName() + " eats meat: " + henk.eatMeat()
-                        + "\n" + dora.getName() + " eats meat: " + dora.eatMeat()
-                        + "\n" + wally.getName() + " eats meat: " + wally.eatMeat()
-                );
+                printCarnivoresEatingMeat();
                 break;
             case "perform trick":
-                // Animals that can perform tricks do so
-                System.out.println(
-                        dora.getName() + " performs trick: " + dora.performTrick()
-                        + "\n" + wally.getName() + " performs trick: " + wally.performTrick()
-                );
+                printTricks();
                 break;
             default:
-                System.out.println("Unknown command: " + input);
+                String[] parts = input.split(" ", 2);
+                String animalName = parts.length > 1 ? parts[1] : "";
+
+                if (animalName.isEmpty()) {
+                    System.out.println("Unknown command: " + input);
+                } else {
+                    // Specific animal says hello
+                    printAnimalGreeting(animalName);
+                }
+
                 break;
+        }
+    }
+
+    private static void printAllGreetings() {
+        for (Animal animal : ANIMALS) {
+            System.out.println(animal.getName() + " says: " + animal.getGreeting());
+        }
+    }
+
+    private static void printAnimalGreeting(String animalName) {
+        // Print greeting for a specific animal
+        switch (animalName) {
+            case "elsa":
+                System.out.println(ANIMALS[0].getName() + " says: " + ANIMALS[0].getGreeting());
+                return; // Exit after handling
+            case "henk":
+                System.out.println(ANIMALS[1].getName() + " says: " + ANIMALS[1].getGreeting());
+                return;
+            case "dora":
+                System.out.println(ANIMALS[2].getName() + " says: " + ANIMALS[2].getGreeting());
+                return;
+            case "wally":
+                System.out.println(ANIMALS[3].getName() + " says: " + ANIMALS[3].getGreeting());
+                return;
+            case "marty":
+                System.out.println(ANIMALS[4].getName() + " says: " + ANIMALS[4].getGreeting());
+                return;
+            default:
+                System.out.println("Unknown animal name: " + animalName);
+                return;
+        }
+    }
+
+    private static void printHerbivoresEatingLeaves() {
+        for (Animal animal : ANIMALS) {
+            if (animal instanceof Hippo) {
+                System.out.println(animal.getName() + " eats leaves: " + ((Hippo) animal).eatLeaves());
+            }
+
+            if (animal instanceof Pig) {
+                System.out.println(animal.getName() + " eats leaves: " + ((Pig) animal).eatLeaves());
+            }
+
+            if (animal instanceof Zebra) {
+                System.out.println(animal.getName() + " eats leaves: " + ((Zebra) animal).eatLeaves());
+            }
+        }
+    }
+
+    private static void printCarnivoresEatingMeat() {
+        for (Animal animal : ANIMALS) {
+            if (animal instanceof Lion) {
+                System.out.println(animal.getName() + " eats meat: " + ((Lion) animal).eatMeat());
+            }
+
+            if (animal instanceof Tiger) {
+                System.out.println(animal.getName() + " eats meat: " + ((Tiger) animal).eatMeat());
+            }
+        }
+    }
+
+    private static void printTricks() {
+        for (Animal animal : ANIMALS) {
+            if (animal instanceof Pig) {
+                System.out.println(animal.getName() + " performs trick: " + ((Pig) animal).performTrick());
+            }
+
+            if (animal instanceof Tiger) {
+                System.out.println(animal.getName() + " performs trick: " + ((Tiger) animal).performTrick());
+            }
         }
     }
 }
