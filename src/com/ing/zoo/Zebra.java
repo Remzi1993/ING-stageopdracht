@@ -15,16 +15,6 @@ public class Zebra extends Animal implements Herbivore {
         return "munch munch zank yee bra";
     }
 
-    @Override
-    public String eatMeat() {
-        return "I am a herbivore, I don't eat meat";
-    }
-
-    @Override
-    public String performTrick() {
-        return "I am a Zebra, I don't perform tricks";
-    }
-
     // Getters and setters
     @Override
     public String getGreeting() {

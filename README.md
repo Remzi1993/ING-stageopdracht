@@ -15,20 +15,19 @@ Mocht er problemen zijn met het openen van dit project, creëer dan een nieuw pr
 2. Maak een nieuwe repository aan, bijvoorbeeld op [Github](https://www.github.com).
 3. Push jouw veranderingen naar jouw repository.
 4. Maak jouw repository openbaar (public).
-5. Als de applicatie af is, push dan de laatste versie naar jouw `master` branch.
+5. Als de applicatie af is, push dan de laatste versie naar jouw `master of main` branch.
 
 ## Opdracht
-- Maak de applicatie af.
-- Reorganiseer eventueel de folder structuur.
-- Refactor eventueel de code (denk goed na over de class structure).
-	- Probeer er voor de zorgen dat je bijvoorbeeld geen EatMeat methode kan aanroepen op een Zebra object.
-- Voeg 2 nieuwe dieren toe.
+- Maak de applicatie af. ✅
+- Reorganiseer eventueel de folder structuur. ✅
+- Refactor eventueel de code (denk goed na over de class structure). ✅
+	- Probeer er voor de zorgen dat je bijvoorbeeld geen EatMeat methode kan aanroepen op een Zebra object. ✅
+- Voeg 2 nieuwe dieren toe. ✅
 
 ## Eisen
-Bij elke command laat je het resultaat in de console zien.
-
-- Als je de [hello] command uitvoert zonder dat er een naam is ingevuld zeggen alle dieren hallo.
-	- Als er wel een naam is ingevuld [hello henk] zegt alleen dat dier hallo 
-- Als je de [give leaves] command uitvoert krijgen alle herbivores leaves.
-- Als je de [give meat] command uitvoert krijgen alle carnivores meat.
-- Als je de [perform trick] command uitvoert doen alle dieren die dat kunnen hun trucje.
+Bij elke command laat je het volgende resultaat in de console zien:
+- Als je de [hello] command uitvoert zonder dat er een naam is ingevuld zeggen alle dieren hallo. ✅
+	- Als er wel een naam is ingevuld [hello henk] zegt alleen dat dier hallo ✅
+- Als je de [give leaves] command uitvoert krijgen alle herbivores leaves. ✅
+- Als je de [give meat] command uitvoert krijgen alle carnivores meat. ✅
+- Als je de [perform trick] command uitvoert doen alle dieren die dat kunnen hun trucje. ✅

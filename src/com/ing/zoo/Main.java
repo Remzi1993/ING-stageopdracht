@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     // Creating all the animals with their names
     private static final Animal[] ANIMALS = {new Hippo("Elsa"), new Lion("Henk"), new Pig("Dora"),
-            new Tiger("Wally"), new Zebra("Marty")};
+            new Tiger("Wally"), new Zebra("Marty"), new Rabbit("Lucy"), new Monkey("Milo")};
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -63,14 +63,20 @@ public class Main {
         for (Animal animal : ANIMALS) {
             if (animal.getName().equalsIgnoreCase(animalName)) {
                 System.out.println(animal.getName() + " says: " + animal.getGreeting());
+                return;
             }
         }
+
+        System.out.println("Unknown animal name: " + animalName);
     }
 
     private static void printHerbivoresEatingLeaves() {
         for (Animal animal : ANIMALS) {
             if (animal instanceof Herbivore) {
-                System.out.println(animal.getName() + " eats leaves: " + animal.eatLeaves());
+                System.out.println(animal.getName() + " eats leaves: " + ((Herbivore) animal).eatLeaves());
+            }
+            if (animal instanceof Omnivores) {
+                System.out.println(animal.getName() + " eats leaves: " + ((Omnivores) animal).eatLeaves());
             }
         }
     }
@@ -78,7 +84,10 @@ public class Main {
     private static void printCarnivoresEatingMeat() {
         for (Animal animal : ANIMALS) {
             if (animal instanceof Carnivore) {
-                System.out.println(animal.getName() + " eats meat: " + animal.eatMeat());
+                System.out.println(animal.getName() + " eats meat: " + ((Carnivore) animal).eatMeat());
+            }
+            if (animal instanceof Omnivores) {
+                System.out.println(animal.getName() + " eats meat: " + ((Omnivores) animal).eatMeat());
             }
         }
     }
@@ -86,7 +95,7 @@ public class Main {
     private static void printTricks() {
         for (Animal animal : ANIMALS) {
             if (animal instanceof DoesTrick) {
-                System.out.println(animal.getName() + " performs trick: " + animal.performTrick());
+                System.out.println(animal.getName() + " performs trick: " + ((DoesTrick) animal).performTrick());
             }
         }
     }

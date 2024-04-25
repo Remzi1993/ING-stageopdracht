@@ -31,11 +31,6 @@ public class Tiger extends Animal implements Carnivore, DoesTrick {
         return trick;
     }
 
-    @Override
-    public String eatLeaves() {
-        return "I'm a carnivore, I don't eat leaves";
-    }
-
     // Getters and setters
     @Override
     public String getGreeting() {
