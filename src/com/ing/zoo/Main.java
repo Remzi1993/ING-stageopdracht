@@ -30,11 +30,13 @@ public class Main {
             case "hello":
                 if (animalName.isEmpty()) {
                     // All animals say hello
-                    System.out.println(elsa.getName() + " says: " + elsa.getGreeting());
-                    System.out.println(henk.getName() + " says: " + henk.getGreeting());
-                    System.out.println(dora.getName() + " says: " + dora.getGreeting());
-                    System.out.println(wally.getName() + " says: " + wally.getGreeting());
-                    System.out.println(marty.getName() + " says: " + marty.getGreeting());
+                    System.out.println(
+                            elsa.getName() + " says: " + elsa.getGreeting()
+                            + "\n" + henk.getName() + " says: " + henk.getGreeting()
+                            + "\n" + dora.getName() + " says: " + dora.getGreeting()
+                            + "\n" + wally.getName() + " says: " + wally.getGreeting()
+                            + "\n" + marty.getName() + " says: " + marty.getGreeting()
+                    );
                 }
                 else {
                     // Specific animal says hello
@@ -62,20 +64,26 @@ public class Main {
                 break;
             case "give leaves":
                 // All herbivores eat leaves
-                System.out.println(elsa.getName() + " eats leaves: " + elsa.eatLeaves());
-                System.out.println(dora.getName() + " eats leaves: " + dora.eatLeaves());
-                System.out.println(marty.getName() + " eats leaves: " + marty.getGreeting());
+                System.out.println(
+                        elsa.getName() + " eats leaves: " + elsa.eatLeaves()
+                        + "\n" + dora.getName() + " eats leaves: " + dora.eatLeaves()
+                        + "\n" + marty.getName() + " eats leaves: " + marty.eatLeaves()
+                );
                 break;
             case "give meat":
                 // All carnivores eat meat
-                System.out.println(henk.getName() + " eats meat: " + henk.getGreeting());
-                System.out.println(dora.getName() + " eats meat: " + dora.eatLeaves());
-                System.out.println(wally.getName() + " eats meat: " + wally.getGreeting());
+                System.out.println(
+                        henk.getName() + " eats meat: " + henk.eatMeat()
+                        + "\n" + dora.getName() + " eats meat: " + dora.eatMeat()
+                        + "\n" + wally.getName() + " eats meat: " + wally.eatMeat()
+                );
                 break;
             case "perform trick":
                 // Animals that can perform tricks do so
-                System.out.println(dora.getName() + " performs trick: " + dora.performTrick());
-                System.out.println(wally.getName() + " performs trick: " + wally.performTrick());
+                System.out.println(
+                        dora.getName() + " performs trick: " + dora.performTrick()
+                        + "\n" + wally.getName() + " performs trick: " + wally.performTrick()
+                );
                 break;
             default:
                 System.out.println("Unknown command: " + input);
