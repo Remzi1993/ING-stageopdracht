@@ -6,7 +6,7 @@ import java.util.Random;
  * A Pig which extends Animal.
  * @author Remzi Cavdar - ict@remzi.info
  */
-public class Pig extends Animal {
+public class Pig extends Animal implements Herbivore, Carnivore, DoesTrick {
     public Pig(String name) {
         super(name);
     }

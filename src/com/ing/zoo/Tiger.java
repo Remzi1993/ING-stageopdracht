@@ -6,7 +6,7 @@ import java.util.Random;
  * A Tiger which extends Animal.
  * @author Remzi Cavdar - ict@remzi.info
  */
-public class Tiger extends Animal {
+public class Tiger extends Animal implements Carnivore, DoesTrick {
     private String greeting = "rraaarww";
 
     public Tiger(String name) {
@@ -29,6 +29,11 @@ public class Tiger extends Animal {
         }
 
         return trick;
+    }
+
+    @Override
+    public String eatLeaves() {
+        return "I'm a carnivore, I don't eat leaves";
     }
 
     // Getters and setters

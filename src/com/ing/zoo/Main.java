@@ -30,6 +30,7 @@ public class Main {
                 printTricks();
                 break;
             default:
+                // Splitting the input to get the animal name
                 String[] parts = input.split(" ", 2);
                 String animalName = parts.length > 1 ? parts[1] : "";
 
@@ -39,7 +40,6 @@ public class Main {
                     // Specific animal says hello
                     printAnimalGreeting(animalName);
                 }
-
                 break;
         }
     }
@@ -62,40 +62,24 @@ public class Main {
 
     private static void printHerbivoresEatingLeaves() {
         for (Animal animal : ANIMALS) {
-            if (animal instanceof Hippo) {
-                System.out.println(animal.getName() + " eats leaves: " + ((Hippo) animal).eatLeaves());
-            }
-
-            if (animal instanceof Pig) {
-                System.out.println(animal.getName() + " eats leaves: " + ((Pig) animal).eatLeaves());
-            }
-
-            if (animal instanceof Zebra) {
-                System.out.println(animal.getName() + " eats leaves: " + ((Zebra) animal).eatLeaves());
+            if (animal instanceof Herbivore) {
+                System.out.println(animal.getName() + " eats leaves: " + animal.eatLeaves());
             }
         }
     }
 
     private static void printCarnivoresEatingMeat() {
         for (Animal animal : ANIMALS) {
-            if (animal instanceof Lion) {
-                System.out.println(animal.getName() + " eats meat: " + ((Lion) animal).eatMeat());
-            }
-
-            if (animal instanceof Tiger) {
-                System.out.println(animal.getName() + " eats meat: " + ((Tiger) animal).eatMeat());
+            if (animal instanceof Carnivore) {
+                System.out.println(animal.getName() + " eats meat: " + animal.eatMeat());
             }
         }
     }
 
     private static void printTricks() {
         for (Animal animal : ANIMALS) {
-            if (animal instanceof Pig) {
-                System.out.println(animal.getName() + " performs trick: " + ((Pig) animal).performTrick());
-            }
-
-            if (animal instanceof Tiger) {
-                System.out.println(animal.getName() + " performs trick: " + ((Tiger) animal).performTrick());
+            if (animal instanceof DoesTrick) {
+                System.out.println(animal.getName() + " performs trick: " + animal.performTrick());
             }
         }
     }

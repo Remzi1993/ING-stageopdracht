@@ -16,6 +16,14 @@ public abstract class Animal {
         this.name = name;
     }
 
+    /*
+     * These methods are abstract because each animal has different implementations.
+     * This is also needed for polymorphism, upcasting and downcasting.
+     */
+    public abstract String eatLeaves();
+    public abstract String eatMeat();
+    public abstract String performTrick();
+
     // Getters and setters
     public String getName() {
         return name;
