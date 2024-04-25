@@ -34,12 +34,21 @@ public class Main {
                 String[] parts = input.split(" ", 2);
                 String animalName = parts.length > 1 ? parts[1] : "";
 
-                if (animalName.isEmpty()) {
-                    System.out.println("Unknown command: " + input);
-                } else {
+                boolean isAnimalFound = false;
+                for (Animal animal : ANIMALS) {
+                    if (animalName.equalsIgnoreCase(animal.getName())) {
+                        animalName = animal.getName();
+                        isAnimalFound = true;
+                    }
+                }
+
+                if (isAnimalFound) {
                     // Specific animal says hello
                     printAnimalGreeting(animalName);
+                    break;
                 }
+
+                System.out.println("Unknown command: " + input);
                 break;
         }
     }
@@ -54,10 +63,8 @@ public class Main {
         for (Animal animal : ANIMALS) {
             if (animal.getName().equalsIgnoreCase(animalName)) {
                 System.out.println(animal.getName() + " says: " + animal.getGreeting());
-                return;
             }
         }
-        System.out.println("Unknown animal name: " + animalName);
     }
 
     private static void printHerbivoresEatingLeaves() {
