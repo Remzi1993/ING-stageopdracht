@@ -6,7 +6,8 @@ Voor het maken van deze opdracht wordt er gebruik gemaakt van het versiebeheersy
 
 Gebruikte **IDE**: [IntelliJ IDEA](https://www.jetbrains.com/idea/). (**Niet verplicht**)
 
-Gebruikte **SDK**: [JDK 1.8](https://bitbucket.org/kychu/zoo/downloads/java-1.8.0-openjdk-1.8.0.212-3.b04.redhat.windows.x86_64.zip).
+Gebruikte **SDK**: [JDK 1.8](https://bitbucket.org/corebankresearch/zoo/downloads/java-1.8.0-openjdk-1.8.0.212-3.b04.redhat.windows.x86_64.zip).
+- Als je IntelliJ IDEA gebruikt kan je de SDK instellen bij `File -> Project Structure -> Project -> Project SDK`.
 
 Mocht er problemen zijn met het openen van dit project, creëer dan een nieuw project binnen jouw IDE en kopieer de Java bestanden uit `src/com/ing/zoo`
 
