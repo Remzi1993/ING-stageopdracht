@@ -1,4 +1,4 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
 
 /**
  * Abstract class for all animals.

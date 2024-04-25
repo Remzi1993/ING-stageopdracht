@@ -26,8 +26,8 @@ Mocht er problemen zijn met het openen van dit project, creëer dan een nieuw pr
 
 ## Eisen
 Bij elke command laat je het volgende resultaat in de console zien:
-- Als je de [hello] command uitvoert zonder dat er een naam is ingevuld zeggen alle dieren hallo. ✅
-	- Als er wel een naam is ingevuld [hello henk] zegt alleen dat dier hallo ✅
-- Als je de [give leaves] command uitvoert krijgen alle herbivores leaves. ✅
-- Als je de [give meat] command uitvoert krijgen alle carnivores meat. ✅
-- Als je de [perform trick] command uitvoert doen alle dieren die dat kunnen hun trucje. ✅
+- Als je de `hello` command uitvoert zonder dat er een naam is ingevuld zeggen alle dieren hallo. ✅
+	- Als er wel een naam is ingevuld `hello henk` zegt alleen dat dier hallo ✅
+- Als je de `give leaves` command uitvoert krijgen alle herbivores leaves. ✅
+- Als je de `give meat` command uitvoert krijgen alle carnivores meat. ✅
+- Als je de `perform trick` command uitvoert doen alle dieren die dat kunnen hun trucje. ✅

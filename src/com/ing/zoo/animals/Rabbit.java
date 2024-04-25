@@ -1,7 +1,12 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
 
+/**
+ * A Rabbit which extends Animal.
+ * @author Remzi Cavdar - ict@remzi.info
+ */
 public class Rabbit extends Animal implements Herbivore, DoesTrick {
     private String greeting = "ppppurring";
+
     public Rabbit(String name) {
         super(name);
     }

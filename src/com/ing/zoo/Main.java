@@ -1,5 +1,6 @@
 package com.ing.zoo;
 
+import com.ing.zoo.animals.*;
 import java.util.Scanner;
 
 /**

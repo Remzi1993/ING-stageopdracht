@@ -1,4 +1,4 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
 
 /**
  * A Hippo which extends Animal.

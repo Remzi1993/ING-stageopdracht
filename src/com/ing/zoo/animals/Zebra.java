@@ -1,18 +1,18 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
 
 /**
- * A Lion which extends Animal.
+ * A Zebra which extends Animal.
  * @author Remzi Cavdar - ict@remzi.info
  */
-public class Lion extends Animal implements Carnivore {
-    private String greeting = "roooaoaaaaar";
+public class Zebra extends Animal implements Herbivore {
+    private String greeting = "zebra zebra";
 
-    public Lion(String name) {
+    public Zebra(String name) {
         super(name);
     }
 
-    public String eatMeat() {
-        return "nomnomnom thx mate";
+    public String eatLeaves() {
+        return "munch munch zank yee bra";
     }
 
     // Getters and setters

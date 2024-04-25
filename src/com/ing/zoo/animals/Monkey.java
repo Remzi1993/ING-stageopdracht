@@ -1,5 +1,9 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
 
+/**
+ * A Monkey which extends Animal.
+ * @author Remzi Cavdar - ict@remzi.info
+ */
 public class Monkey extends Animal implements Omnivores, DoesTrick {
     private String greeting = "mhahhahahahaahaa";
 
