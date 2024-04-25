@@ -51,27 +51,13 @@ public class Main {
     }
 
     private static void printAnimalGreeting(String animalName) {
-        // Print greeting for a specific animal
-        switch (animalName) {
-            case "elsa":
-                System.out.println(ANIMALS[0].getName() + " says: " + ANIMALS[0].getGreeting());
-                return; // Exit after handling
-            case "henk":
-                System.out.println(ANIMALS[1].getName() + " says: " + ANIMALS[1].getGreeting());
+        for (Animal animal : ANIMALS) {
+            if (animal.getName().equalsIgnoreCase(animalName)) {
+                System.out.println(animal.getName() + " says: " + animal.getGreeting());
                 return;
-            case "dora":
-                System.out.println(ANIMALS[2].getName() + " says: " + ANIMALS[2].getGreeting());
-                return;
-            case "wally":
-                System.out.println(ANIMALS[3].getName() + " says: " + ANIMALS[3].getGreeting());
-                return;
-            case "marty":
-                System.out.println(ANIMALS[4].getName() + " says: " + ANIMALS[4].getGreeting());
-                return;
-            default:
-                System.out.println("Unknown animal name: " + animalName);
-                return;
+            }
         }
+        System.out.println("Unknown animal name: " + animalName);
     }
 
     private static void printHerbivoresEatingLeaves() {
