@@ -31,11 +31,12 @@ public class Main {
                 printTricks();
                 break;
             default:
-                // Splitting the input to get the animal name
+                // Splitting the user input to get an array of 2 strings to check for "hello" and the animal name
                 String[] parts = input.split(" ", 2);
                 String animalName = parts.length > 1 ? parts[1] : "";
 
                 boolean isAnimalFound = false;
+                // Check if the animal name is valid
                 for (Animal animal : ANIMALS) {
                     if (animalName.equalsIgnoreCase(animal.getName())) {
                         animalName = animal.getName();
@@ -43,7 +44,8 @@ public class Main {
                     }
                 }
 
-                if (isAnimalFound) {
+                // If the user input contains "hello" and the animal name, then print the animal greeting
+                if (parts[0].equalsIgnoreCase("hello") && isAnimalFound) {
                     // Specific animal says hello
                     printAnimalGreeting(animalName);
                     break;
