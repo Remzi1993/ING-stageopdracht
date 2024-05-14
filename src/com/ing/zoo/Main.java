@@ -12,94 +12,23 @@ public class Main {
     private static final Animal[] ANIMALS = {new Hippo("Elsa"), new Lion("Henk"), new Pig("Dora"),
             new Tiger("Wally"), new Zebra("Marty"), new Rabbit("Lucy"), new Monkey("Milo")};
 
+    // Creating all the animals with their names for the second zoo
+    private static final Animal[] ANIMALS2 = {new Lion("Ramses"), new Pig("Jan"), new Tiger("Goofy")};
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Voer uw command in: ");
         String input = scanner.nextLine().trim().toLowerCase();
 
-        switch (input) {
-            case "hello":
-                printAllGreetings();
-                break;
-            case "give leaves":
-                printHerbivoresEatingLeaves();
-                break;
-            case "give meat":
-                printCarnivoresEatingMeat();
-                break;
-            case "perform trick":
-                printTricks();
-                break;
-            default:
-                // Splitting the user input to get an array of 2 strings to check for "hello" and the animal name
-                String[] parts = input.split(" ", 2);
-                String animalName = parts.length > 1 ? parts[1] : "";
+        // User command
+        Zoo zoo = new Zoo(ANIMALS);
+        zoo.userCommand(input);
 
-                boolean isAnimalFound = false;
-                // Check if the animal name is valid
-                for (Animal animal : ANIMALS) {
-                    if (animalName.equalsIgnoreCase(animal.getName())) {
-                        animalName = animal.getName();
-                        isAnimalFound = true;
-                    }
-                }
+        // User command for the second zoo
+        System.out.print("\nVoer uw command in voor de tweede dierentuin: ");
+        String input2 = scanner.nextLine().trim().toLowerCase();
 
-                // If the user input contains "hello" and the animal name, then print the animal greeting
-                if (parts[0].equalsIgnoreCase("hello") && isAnimalFound) {
-                    // Specific animal says hello
-                    printAnimalGreeting(animalName);
-                    break;
-                }
-
-                System.out.println("Unknown command: " + input);
-                break;
-        }
-    }
-
-    private static void printAllGreetings() {
-        for (Animal animal : ANIMALS) {
-            System.out.println(animal.getName() + " says: " + animal.getGreeting());
-        }
-    }
-
-    private static void printAnimalGreeting(String animalName) {
-        for (Animal animal : ANIMALS) {
-            if (animal.getName().equalsIgnoreCase(animalName)) {
-                System.out.println(animal.getName() + " says: " + animal.getGreeting());
-                return;
-            }
-        }
-
-        System.out.println("Unknown animal name: " + animalName);
-    }
-
-    private static void printHerbivoresEatingLeaves() {
-        for (Animal animal : ANIMALS) {
-            if (animal instanceof Herbivore) {
-                System.out.println(animal.getName() + " eats leaves: " + ((Herbivore) animal).eatLeaves());
-            }
-            if (animal instanceof Omnivores) {
-                System.out.println(animal.getName() + " eats leaves: " + ((Omnivores) animal).eatLeaves());
-            }
-        }
-    }
-
-    private static void printCarnivoresEatingMeat() {
-        for (Animal animal : ANIMALS) {
-            if (animal instanceof Carnivore) {
-                System.out.println(animal.getName() + " eats meat: " + ((Carnivore) animal).eatMeat());
-            }
-            if (animal instanceof Omnivores) {
-                System.out.println(animal.getName() + " eats meat: " + ((Omnivores) animal).eatMeat());
-            }
-        }
-    }
-
-    private static void printTricks() {
-        for (Animal animal : ANIMALS) {
-            if (animal instanceof DoesTrick) {
-                System.out.println(animal.getName() + " performs trick: " + ((DoesTrick) animal).performTrick());
-            }
-        }
+        Zoo zoo2 = new Zoo(ANIMALS2);
+        zoo2.userCommand(input2);
     }
 }
